@@ -1,0 +1,43 @@
+azure-lab/
+│
+├── README.md
+├── resumos/
+│   ├── criacao-vm.md
+│   ├── azure-cli.md
+│   └── recursos-basicos.md
+│
+├── anotacoes/
+│   ├── comandos-uteis.md
+│   └── boas-praticas.md
+│
+└── dicas/
+    ├── economia-custos.md
+    └── seguranca.md
+# Criação de Máquina Virtual no Azure
+
+## 1. Acesso ao Portal
+- Acesse: [https://portal.azure.com](https://portal.azure.com)
+- Faça login com sua conta Microsoft
+
+## 2. Criação da VM
+1. Navegue até **Máquinas Virtuais**
+2. Clique em **+ Criar > Máquina Virtual**
+3. Preencha os campos obrigatórios:
+   - Assinatura e grupo de recursos
+   - Nome da VM e região
+   - Tipo de imagem (ex: Ubuntu 20.04 LTS)
+   - Tamanho da VM (ex: B1s para testes)
+4. Autenticação:
+   - Usuário e senha ou chave SSH
+5. Configurações adicionais:
+   - Disco, rede virtual, IP público
+   - Monitoramento e tags
+
+## 3. Revisar e Criar
+- Clique em **Revisar + Criar**
+- Depois, em **Criar**
+
+## 4. Acesso à VM
+- Acesse via SSH:
+```bash
+ssh usuario@ip-publico
