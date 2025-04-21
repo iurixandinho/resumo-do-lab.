@@ -1,0 +1,62 @@
+criação de uma instância de banco de dados no Microsoft Azure, usando como exemplo o Azure Database for PostgreSQL (mas o processo é bem semelhante para MySQL e SQL Server).
+
+Aqui está um passo a passo para configurar a instância no portal do Azure:
+
+🚀 Etapas para configurar uma instância de banco de dados PostgreSQL no Azure
+1. Acesse o Portal
+Vá para: https://portal.azure.com
+
+Faça login com sua conta.
+
+2. Criar um novo recurso
+No menu lateral, clique em "Criar um recurso".
+
+Pesquise por "Azure Database for PostgreSQL".
+
+Escolha "Azure Database for PostgreSQL – Flexible Server" (é o modelo recomendado).
+
+3. Configurações básicas
+Assinatura: escolha sua assinatura Azure.
+
+Grupo de recursos: crie um novo (ex: rg-treinamento-db) ou selecione um existente.
+
+Nome do servidor: um nome único (ex: treinamentodbserver).
+
+Região: escolha a mais próxima de você ou do seu serviço.
+
+Versão do PostgreSQL: use a mais recente estável (ex: 15).
+
+Tipo de carga de trabalho: Desenvolvimento/Teste (para custos menores).
+
+4. Autenticação
+Selecione "Autenticação por senha".
+
+Defina:
+
+Nome do administrador (ex: adminuser)
+
+Senha e confirmação da senha
+
+5. Redimensionamento
+Aqui você define CPU, memória e armazenamento.
+
+Para testes, escolha o plano Burstable (B1ms ou B1s) com 32GB de armazenamento para economizar.
+
+6. Configurações de rede
+Acesso público: selecione "Permitir acesso público".
+
+Regra de firewall: adicione seu IP atual para conectar do seu computador.
+
+(⚠️ Cuidado para não permitir acesso amplo em produção.)
+
+7. Revisar e criar
+Clique em "Revisar + criar".
+
+Aguarde a validação e clique em "Criar".
+
+🛠️ Depois da criação: conectar ao banco
+Você pode usar qualquer cliente PostgreSQL (como DBeaver, Azure Data Studio, ou psql no terminal). Os dados para conexão estão no painel do servidor.
+
+Exemplo:
+
+psql -h treinamentodbserver.postgres.database.azure.com -U adminuser@treinamentodbserver -d postgres
